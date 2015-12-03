@@ -5,11 +5,14 @@
 BUILD_DIR=$1
 cd $BUILD_DIR
 
+SWIFT_VERSION="2.2-SNAPSHOT-2015-12-01-b"
+SWIFT_PLATFORM="ubuntu14.04"
+
 mkdir -p .heroku/swift
 echo "$BUILD_DIR/.heroku/swift contents..."
 ls $BUILD_DIR/.heroku/swift
 
-SWIFT_RELEASE_URL="https://swift.org/builds/ubuntu1404/swift-2.2-SNAPSHOT-2015-12-01-b/swift-2.2-SNAPSHOT-2015-12-01-b-ubuntu14.04.tar.gz"
+SWIFT_RELEASE_URL="https://swift.org/builds/ubuntu1404/swift-$SWIFT_VERSION/swift-$SWIFT_VERSION-$SWIFT_PLATFORM.tar.gz"
 
 # we need to run things in here, set it up!
 mkdir -p /app/.heroku
