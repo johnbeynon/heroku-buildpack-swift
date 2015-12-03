@@ -24,7 +24,8 @@ ln -s $BUILD_DIR/.heroku/swift /app/.heroku/swift
 echo "Downloading Release and extracting..."
 curl --location "$SWIFT_RELEASE_URL" | tar xz -C $BUILD_DIR/.heroku/swift
 
-echo "setting path..."
+mkdir -p $BUILD_DIR/.profile.d
+cat > $BUILD_DIR/.profile.d/swift.sh <<"EOF"
 export PATH="/app/.heroku/swift/swift-2.2-SNAPSHOT-2015-12-01-b-ubuntu14.04/usr/bin":$PATH
-echo $PATH
+EOF
 
