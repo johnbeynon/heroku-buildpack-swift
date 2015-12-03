@@ -3,10 +3,13 @@
 # bin/compile <build-dir> <cache-dir> <env-dir>
 
 BUILD_DIR=$1
-
 cd $BUILD_DIR
 
+echo $BUILD_DIR
+pwd
+
 mkdir -p .heroku/swift
+ls
 
 SWIFT_RELEASE_URL="https://swift.org/builds/ubuntu1404/swift-2.2-SNAPSHOT-2015-12-01-b/swift-2.2-SNAPSHOT-2015-12-01-b-ubuntu14.04.tar.gz"
 
