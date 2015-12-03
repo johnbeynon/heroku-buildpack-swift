@@ -6,7 +6,7 @@ BUILD_DIR=$1
 cd $BUILD_DIR
 
 mkdir -p .heroku/swift
-echo "$BUILD_DIR/.heroku.swift contents..."
+echo "$BUILD_DIR/.heroku/swift contents..."
 ls $BUILD_DIR/.heroku/swift
 
 SWIFT_RELEASE_URL="https://swift.org/builds/ubuntu1404/swift-2.2-SNAPSHOT-2015-12-01-b/swift-2.2-SNAPSHOT-2015-12-01-b-ubuntu14.04.tar.gz"
@@ -17,6 +17,6 @@ ln -s $BUILD_DIR/.heroku/swift /app/.heroku/swift
 export PATH=/app/.heroku/swift/bin:$PATH
 
 echo "Downloading Release and extracting..."
-curl --location "$SWIFT_RELEASE_URL" | tar xzf -C $BUILD_DIR/.heroku/swift
+curl --location "$SWIFT_RELEASE_URL" | tar xz -C $BUILD_DIR/.heroku/swift
 
 export PATH=/path/to/usr/bin:"${PATH}"
