@@ -5,11 +5,8 @@
 BUILD_DIR=$1
 cd $BUILD_DIR
 
-echo $BUILD_DIR
-pwd
-
 mkdir -p .heroku/swift
-ls
+ls $BUILD_DIR/.heroku/swift
 
 SWIFT_RELEASE_URL="https://swift.org/builds/ubuntu1404/swift-2.2-SNAPSHOT-2015-12-01-b/swift-2.2-SNAPSHOT-2015-12-01-b-ubuntu14.04.tar.gz"
 
