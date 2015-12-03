@@ -14,6 +14,9 @@ ls $BUILD_DIR/.heroku/swift
 
 SWIFT_RELEASE_URL="https://swift.org/builds/ubuntu1404/swift-$SWIFT_VERSION/swift-$SWIFT_VERSION-$SWIFT_PLATFORM.tar.gz"
 
+echo "Downloading..."
+echo $SWIFT_RELEASE_URL
+
 # we need to run things in here, set it up!
 mkdir -p /app/.heroku
 ln -s $BUILD_DIR/.heroku/swift /app/.heroku/swift
