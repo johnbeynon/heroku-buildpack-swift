@@ -41,7 +41,7 @@ ln -s $BUILD_DIR/.heroku/swift /app/.heroku/swift
 curl --silent --location "$SWIFT_RELEASE_URL" | tar xz -C $BUILD_DIR/.heroku/swift
 
 mkdir -p $BUILD_DIR/.profile.d
-cat > $BUILD_DIR/.profile.d/swift.sh <<"EOF"
+cat > $BUILD_DIR/.profile.d/swift.sh <<EOF
 export PATH="/app/.heroku/swift/swift-$SWIFT_VERSION-$SWIFT_PLATFORM/usr/bin":$PATH
 EOF
 
