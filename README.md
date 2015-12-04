@@ -12,6 +12,7 @@ $ heroku create
 $ heroku buildpacks:set https://github.com/johnbeynon/heroku-buildpack-swift
 $ git push heroku master
 $ heroku run swift hello.swift
+```
 
 ```
 Counting objects: 1, done.
