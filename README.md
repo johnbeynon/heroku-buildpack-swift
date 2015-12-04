@@ -3,10 +3,15 @@
 ## Usage
 
 ```
+$ mkdir myswiftapp
+$ cd myswiftapp
+$ echo 'print("Hello from Swift")' > hello.swift
+$ git init
+$ git commit -m "Initial commit"
+$ heroku create
 $ heroku buildpacks:set https://github.com/johnbeynon/heroku-buildpack-swift
-```
-
-And deploy!
+$ git push heroku master
+$ heroku run swift hello.swift
 
 ```
 Counting objects: 1, done.
