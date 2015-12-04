@@ -9,7 +9,7 @@ SWIFT_VERSION="2.2-SNAPSHOT-2015-12-01-b"
 SWIFT_PLATFORM="ubuntu14.04"
 
 echo ""
-echo "Installing $SWIFT_VERSION"
+echo "Installing Swift $SWIFT_VERSION-$SWIFT_PLATFORM"
 echo ""
 
 mkdir -p .heroku/swift
