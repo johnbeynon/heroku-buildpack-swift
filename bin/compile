@@ -8,6 +8,10 @@ cd $BUILD_DIR
 SWIFT_VERSION="2.2-SNAPSHOT-2015-12-01-b"
 SWIFT_PLATFORM="ubuntu14.04"
 
+echo ""
+echo "Installing $SWIFT_VERSION"
+echo ""
+
 mkdir -p .heroku/swift
 
 SWIFT_RELEASE_URL="https://swift.org/builds/ubuntu1404/swift-$SWIFT_VERSION/swift-$SWIFT_VERSION-$SWIFT_PLATFORM.tar.gz"
@@ -18,7 +22,7 @@ ln -s $BUILD_DIR/.heroku/swift /app/.heroku/swift
 curl --silent --location "$SWIFT_RELEASE_URL" | tar xz -C $BUILD_DIR/.heroku/swift
 
 mkdir -p $BUILD_DIR/.profile.d
-cat > $BUILD_DIR/.profile.d/swift.sh <<EOF
+cat > $BUILD_DIR/.profile.d/swift.sh <<"EOF"
 export PATH="/app/.heroku/swift/swift-$SWIFT_VERSION-$SWIFT_PLATFORM/usr/bin":$PATH
 EOF
 
