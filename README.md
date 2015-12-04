@@ -13,7 +13,6 @@ $ heroku buildpacks:set https://github.com/johnbeynon/heroku-buildpack-swift
 $ git push heroku master
 $ heroku run swift hello.swift
 
-```
 Counting objects: 1, done.
 Writing objects: 100% (1/1), 183 bytes | 0 bytes/s, done.
 Total 1 (delta 0), reused 0 (delta 0)
