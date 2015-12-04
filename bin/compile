@@ -8,7 +8,7 @@ cd $BUILD_DIR
 SWIFT_VERSION="2.2-SNAPSHOT-2015-12-01-b"
 SWIFT_PLATFORM="ubuntu14.04"
 
-echo<<EOF
+echo<<"EOF"
       `.........`                                               
      ;;;;;;;;;;;;;                                              
     ;;;;;;;;;;;;;;;                                             
