@@ -2,8 +2,16 @@
 
 # bin/compile <build-dir> <cache-dir> <env-dir>
 
+# fail fast
+set -e
+
+BP_DIR=$(cd $(dirname $0)/..; pwd) # absolute path
+. $BP_DIR/lib/common.sh
+
 BUILD_DIR=$1
-cd $BUILD_DIR
+CACHE_DIR=$2/swift
+
+mkdir -p $CACHE_DIR
 
 SWIFT_VERSION="2.2-SNAPSHOT-2015-12-01-b"
 SWIFT_PLATFORM="ubuntu14.04"
@@ -27,18 +35,12 @@ cat<<"EOF"
      ;;;;;;;;;;;;;      +#:,+#    #`    #     '   #    #;:      
 EOF
 
-echo ""
-echo "Installing Swift $SWIFT_VERSION-$SWIFT_PLATFORM"
-echo ""
-
+cd $BUILD_DIR
 mkdir -p .heroku/swift
-
-SWIFT_RELEASE_URL="https://swift.org/builds/ubuntu1404/swift-$SWIFT_VERSION/swift-$SWIFT_VERSION-$SWIFT_PLATFORM.tar.gz"
-
 mkdir -p /app/.heroku
 ln -s $BUILD_DIR/.heroku/swift /app/.heroku/swift
 
-curl --silent --location "$SWIFT_RELEASE_URL" | tar xz -C $BUILD_DIR/.heroku/swift
+install_swift $SWIFT_VERSION $SWIFT_PLATFORM ${BUILD_DIR}/.heroku/swift 2>&1 | sed -u 's/^/       /'
 
 mkdir -p $BUILD_DIR/.profile.d
 cat > $BUILD_DIR/.profile.d/swift.sh <<EOF
