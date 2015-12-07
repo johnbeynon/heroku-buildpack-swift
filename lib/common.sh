@@ -15,6 +15,7 @@ cache_copy() {
 install_swift() {
   local version="$1"
   local platform="$2"
+  local dir="$3"
 
   echo "Downloading and installing Swift $version..."
   local download_url="https://swift.org/builds/ubuntu1404/swift-$version/swift-$version-$platform.tar.gz"
