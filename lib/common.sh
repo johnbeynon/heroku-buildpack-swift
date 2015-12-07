@@ -22,5 +22,5 @@ install_swift() {
   curl "$download_url" --silent --fail -o /tmp/swift.tar.gz || (echo "Unable to download Swift $version; does it exist?" && false)
   tar xzf /tmp/swift.tar.gz -C /tmp
   mv /tmp/swift-$version-$platform $dir
-  chmod +x $dir/usr/bin/*
+  chmod +x $dir/swift-$version-$platform/usr/bin/*
 }
